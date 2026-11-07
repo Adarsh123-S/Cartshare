@@ -1,0 +1,38 @@
+body { background: #f4f6f9; }
+
+.threshold-input { width: 90px; }
+.progress { height: 14px; }
+.progress-bar { transition: width .3s ease; }
+
+.log-list { max-height: 360px; overflow-y: auto; }
+.log-list li { padding: .4rem 0; border-bottom: 1px solid #eee; font-size: .9rem; }
+.log-list time { display: block; color: #888; font-size: .75rem; }
+
+.member-dot {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  background: #198754; margin-right: .5rem;
+}
+
+.qty-btns .btn { padding: 0 .5rem; }
+
+@media (max-width: 575.98px) {
+  .navbar .container { gap: .5rem; }
+  .table { font-size: .9rem; }
+}
+
+/* ---------- Print / receipt ---------- */
+.receipt { display: none; }
+
+@media print {
+  body { background: #fff; }
+  .no-print, #joinView, #roomView { display: none !important; }
+  .receipt { display: block !important; font-family: "Courier New", monospace; color: #000; padding: 1rem; }
+  .receipt h1 { font-size: 1.4rem; text-align: center; margin-bottom: .25rem; }
+  .receipt .meta { text-align: center; font-size: .85rem; margin-bottom: 1rem; }
+  .receipt table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+  .receipt th, .receipt td { border-bottom: 1px dashed #666; padding: 4px 6px; text-align: left; }
+  .receipt .num { text-align: right; }
+  .receipt .grand { font-weight: bold; font-size: 1.1rem; border-top: 2px solid #000; }
+  .receipt h2 { font-size: 1.05rem; margin: 1rem 0 .4rem; }
+  .receipt .sig { margin-top: 2rem; font-size: .8rem; }
+}
